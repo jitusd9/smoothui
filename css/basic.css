@@ -1,0 +1,148 @@
+/* loading google fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Ubuntu&display=swap');
+
+    /* font-family: 'Nunito', sans-serif;
+    font-family: 'Ubuntu', sans-serif; */
+
+  /* basic html tags  */
+  /* navbar is fixed and height is 60px that's why main tag is shifted 60px below*/
+  /* ******************************************************************************************************************* */
+  :root{
+    --PCblue : #725ee2;
+    --blue : #5e6be2;
+    --red : #ff0077;
+    --black : #2f2f2f;
+    --green : #01be01;
+    --grey : #2f394e;
+    --yellow : #ffd900;
+    --disabled : #cfcfcf;
+  }
+  
+  ::selection{
+    background: var(--yellow);
+    color: var(--black);
+  }
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+  button{
+      cursor: pointer;
+      border: none;
+      color: #fff;
+      background: var(--blue);
+      padding: 8px 10px;
+      border-radius: 2px;   
+      font-size: 1.1rem;   
+  }
+
+  input{
+      border: 1px solid #ccc;
+      padding: 8px 10px;
+      border-radius: 2px;
+      color: var(--green);
+      letter-spacing: 1px;
+      font-size: 1.1rem;
+  }
+  
+  input:focus{
+      outline: var(--blue) 2px solid;
+      border: 1px solid transparent;
+  }
+
+  input[type="checkbox"]{
+      cursor: pointer;
+      height: 14px;
+      width: 14px;
+  }
+
+  input[type="checkbox"]:focus{
+    outline: none;
+  }
+
+  input[type="checkbox"]::before{
+      background: red;
+      color: rebeccapurple;
+  }
+
+  a{
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--blue);
+  }
+
+  a:hover{
+      color: #ff0077;
+  }
+
+  ::placeholder{
+      color: var(--disabled);
+  }
+
+  p{
+      font-family: 'Nunito', sans-serif;
+      letter-spacing: 1px;
+      line-height: 2rem;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      margin: 0;
+  }
+
+  img{
+      width: 100%;
+  }
+  aside{
+      position: relative;
+      width: 200px;
+      float: right;
+      color: var(--grey);
+      background: #fff;
+      padding: 5px 10px;
+      border-radius: 2px;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  form{
+      display: flex;
+      flex-direction: column;
+      color: var(--grey);
+      width: 300px;
+      padding: 10px;
+      margin: 10px auto;
+      background: rgb(255, 255, 255);
+      border-radius: 2px;
+      box-shadow: 0 3px 2px rgba(0, 0, 0, 0.1);
+      text-align: center;
+  }
+
+  form input{
+      margin: 8px 0;
+  }
+
+  form button{
+      margin: 8px 0;
+  }
+
+  footer{
+      /* position: fixed; */
+      /* top: calc(100vh - 60px); */
+      /* height: 60px; */
+      width: 100%;
+      padding: 30px;
+      color: #fff;
+      background: var(--black);
+  }
+
+  footer p{
+      text-align: center;
+      color: var(--disabled);
+  }
+
+  li{
+    letter-spacing: 1px;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    color: var(--grey);
+    font-style: italic;
+  }
