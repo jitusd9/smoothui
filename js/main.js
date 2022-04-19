@@ -101,3 +101,9 @@ function changeMode(e){
 function changeColor(){
     colorBox.classList.toggle('box-active');
 }
+
+
+// vidoe script 
+const video = document.querySelector('#video');
+
+// video.play();
