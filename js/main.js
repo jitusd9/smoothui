@@ -106,4 +106,4 @@ function changeColor(){
 // vidoe script 
 const video = document.querySelector('#video');
 
-// video.play();
+video.play();
