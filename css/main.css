@@ -2,6 +2,7 @@
     --color : #000;
     --bg-color : #fff;
     --border : #cecece;
+    --div-bg : #efefef
 }
 
 
@@ -9,43 +10,50 @@
     --color : #000;
     --bg-color : #fff;
     --border : #cecece;
+    --div-bg : #efefef;
 }
 
 .dark{
     --color : #efefef;
     --bg-color : #2c2c2c;
     --border : #7e7e7e;
+    --div-bg : #383838;
 }
 
 .color{
     --color : #efefef;
     --bg-color : #955339;
-    --border : #7e7e7e;
+    --border : #404040;
+    --div-bg : #7a4732;
 }
 
 .color1{
     --color : #efefef;
     --bg-color : #955339;
-    --border : #7e7e7e;
+    --border : #404040;
+    --div-bg : #b06244;
 }
 
 .color2{
     --color : #efefef;
     --bg-color : #399543;
-    --border : #7e7e7e;
+    --border : #404040;
+    --div-bg : #3ea34a;
 }
 
 .color3{
     --color : #efefef;
     --bg-color : #23585f;
-    --border : #7e7e7e;
+    --border : #404040;
+    --div-bg : #307881;
 }
 
 .color4{
     --pic-color : rgb(195, 65, 255);
     --color : #efefef;
     --bg-color : var(--pic-color);
-    --border : #7e7e7e;
+    --border : #404040;
+    --div-bg : #7a4732;
 }
 
 html,
@@ -70,9 +78,6 @@ body{
     padding-top: 50px;
     background-size: 300px 100px;
     
-    /* background: radial-gradient(ellipse at bottom, #ff069b, rgb(0, 119, 255));
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text; */
 }
 
 .tagline{
@@ -84,7 +89,7 @@ body{
     width: auto;
     margin: 10px auto;
     padding: 20px;
-    border: 1px solid var(--border);
+    border: 1px solid var(--color);
     border-radius: 4px;
     background-color: var(--bg-color);
     text-align: center;
@@ -100,7 +105,7 @@ body{
     color: var(--bg-color);
     background-color: var(--color);
     box-shadow: 0 5px 0px rgba(0,0,0,0.2);
-    border-radius: 4px;
+    border-radius: 2px;
     transition: all 0.3s;
 }
 
@@ -153,14 +158,6 @@ body{
     overflow: visible;
 }
 
-/* #color:focus ~ .color-box{
-    transform: translateX(0%);
-    opacity: 1;
-    pointer-events: all;
-    overflow: visible;
-} */
-
-
 .color-box .scheme{
     height: 60px;
     width: 60px;
@@ -174,10 +171,6 @@ body{
 .box-active .scheme{
     transform: scale(0.9) translateX(0%);
 }
-
-/* #color:focus ~ .color-box .scheme{
-    transform: scale(0.9) translateX(0%);
-} */
 
 .color-box button:focus{
     box-shadow: none;
@@ -232,6 +225,10 @@ body{
     display: flex;
     align-items: center;
     flex-direction: column;
+    background: linear-gradient(90deg, var(--div-bg), var(--bg-color) 70%);
+    border-radius: 6px;
+    padding: 10px;
+    /* box-shadow: 0 20px 5px -10px rgba(0,0,0,0.2); */
 }
 
 .feature .text,
@@ -240,9 +237,11 @@ body{
 }
 
 .feature .text p{
-    font-size: 1.5rem;
-    text-align: center;
+    position: relative;
+    text-align: left;
+    margin: 10px;
 }
+
 
 .feature figure{
     perspective: 500px;
@@ -282,13 +281,72 @@ body{
 }
 
 .download{
+    width: 120px;
+    margin: 0 auto;
     text-align: center;
-    padding-bottom: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .download button{
-    box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+    color: transparent;
+    background-color: transparent;
+    position: relative;
+    width: 90%;
+    box-shadow: 0 8px 0px -3px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s;
 }
+
+.download button::before{
+    content: "Install";
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background: var(--blue);
+    transition: all 0.3s;
+    transform-origin: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download button::after{
+    content: "Install";
+    position: absolute;
+    top: 0%;
+    left: -20px;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    background: #000;
+    transition: all 0.3s;
+    transform: rotate(90deg);
+    transform-origin: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.download button:hover::before{
+    top: -100%;
+    /* transform: rotate(-90deg); */
+}
+
+.download button:hover::after{
+    top: 0%;
+    left: 0%;
+    transform: rotate(0deg);
+}
+
 
 @media (min-width : 600px){
     .brand{
@@ -306,6 +364,10 @@ body{
     .feature .img{  
         flex: 1;
         margin: 20px auto;
+    }
+
+    .feature .text p{
+        font-size: 1.5rem;
     }
 
     .feature .video video{

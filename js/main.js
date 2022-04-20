@@ -43,6 +43,7 @@ picker.addEventListener('input', () => {
 
     // body.style.backgroundColor =  inputColor;
     root.style.setProperty('--bg-color', inputColor);
+    root.style.setProperty('--bg-color', inputColor);
 
     if(luma < 128){
         root.style.setProperty('--color', '#fff');
@@ -101,9 +102,3 @@ function changeMode(e){
 function changeColor(){
     colorBox.classList.toggle('box-active');
 }
-
-
-// vidoe script 
-const video = document.querySelector('#video');
-
-video.play();
